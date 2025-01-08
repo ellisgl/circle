@@ -1,0 +1,6 @@
+README
+
+This sample program demonstrates how to use a SH1206-controlled I2C OLED display.
+Before building you have to configure the program in kernel.cpp according to the
+hardware of your LCD display. You have to set the display size (columns, rows)
+and the I2C address of hte interface module.
