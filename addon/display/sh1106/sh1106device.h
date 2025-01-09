@@ -13,6 +13,15 @@ public:
     // Constructor
     CSH1106Device(CI2CMaster& i2c, u8 address = 0x3C);
 
+    // Write a single command
+    void WriteCommand(u8 command);
+
+    // Write a single data byte
+    void WriteData(u8 data);
+
+    // Set cursor position on the display
+    void SetCursor(int x, int y);
+
     // Initialize the display
     bool Initialize();
 
@@ -54,20 +63,13 @@ public:
 
     void PrintFrameBufferToConsole();
 
+
 private:
     CI2CMaster& m_I2CMaster;   // Reference to the I2C master
     u8 m_Address;         // I2C address of the SH1106 display
 
     int CalculateTextWidth(const char* text);
 
-    // Write a single command
-    void WriteCommand(u8 command);
-
-    // Write a single data byte
-    void WriteData(u8 data);
-
-    // Set cursor position on the display
-    void SetCursor(int x, int y);
 
     void ClipAndWrap(int &x, int &y);
 

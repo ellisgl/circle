@@ -132,7 +132,7 @@ void CSH1106Device::ClearRow(int y) {
 }
 
 // Calculate the width of a text string
-int CalculateTextWidth(const char* text) {
+int CSH1106Device::CalculateTextWidth(const char* text) {
     int width = 0;
     while (*text++) {
         width += 10; // 8 for character, 2 for padding
